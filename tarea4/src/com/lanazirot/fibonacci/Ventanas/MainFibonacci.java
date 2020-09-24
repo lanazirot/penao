@@ -82,10 +82,11 @@ public class MainFibonacci extends JFrame {
 					fibo = new Fibonacci(Integer.parseInt(txtNumeroInicial.getText()), Integer.parseInt(txtNumeroFinal.getText()), 
 							Integer.parseInt(txtIteraciones.getText()));
 				} catch (NumberFormatException ex) {
-					JOptionPane.showMessageDialog(MainFibonacci.this, "Formato incorrecto en algun campo. " + ex.getLocalizedMessage());
+					JOptionPane.showMessageDialog(MainFibonacci.this, "Formato incorrecto en algun campo. " 
+							+ ex.getLocalizedMessage(), "Error :(", JOptionPane.ERROR_MESSAGE);
 					return;
 				} catch (FibonacciException ex) {
-					JOptionPane.showMessageDialog(MainFibonacci.this, ex.getMessage());
+					JOptionPane.showMessageDialog(MainFibonacci.this, ex.getMessage(), "Error :(", JOptionPane.ERROR_MESSAGE);
 					return;
 				}	
 				
