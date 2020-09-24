@@ -41,7 +41,7 @@ public class MainFibonacci extends JFrame {
 	}
 	public MainFibonacci() {
 		setResizable(false);
-		setTitle("Serie Fibonacci GUI");
+		setTitle("Serie Fibonacci GUI por lanazirot");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 479, 278);
 		setBackground(new Color(238, 238, 238));
