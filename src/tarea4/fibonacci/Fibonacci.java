@@ -1,8 +1,8 @@
-package com.lanazirot.fibonacci.Fibonacci;
+package tarea4.fibonacci;
 
 import java.util.Iterator;
 
-import com.lanazirot.fibonacci.Excepciones.FibonacciException;
+import tarea4.excepciones.FibonacciException;
 
 public final class Fibonacci implements Iterable<Long> {
 

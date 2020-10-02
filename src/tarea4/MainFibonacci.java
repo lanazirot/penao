@@ -1,4 +1,4 @@
-package com.lanazirot.fibonacci.Ventanas;
+package tarea4;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.EventQueue;
@@ -18,8 +18,8 @@ import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 import javax.swing.border.EmptyBorder;
 
-import com.lanazirot.fibonacci.Excepciones.FibonacciException;
-import com.lanazirot.fibonacci.Fibonacci.Fibonacci;
+import tarea4.excepciones.FibonacciException;
+import tarea4.fibonacci.Fibonacci;
 public class MainFibonacci extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;

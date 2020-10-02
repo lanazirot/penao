@@ -1,4 +1,4 @@
-package com.lanazirot.fibonacci.Excepciones;
+package tarea4.excepciones;
 
 public class FibonacciException extends Exception {
 
