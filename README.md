@@ -11,3 +11,10 @@
 
 
 ## Instituo Tecnológico de Nuevo Laredo
+
+| Carpeta | Contenido |
+| ------- | --------- |
+|   __src__   |  Carpeta principal |
+| tarea3  |  Tarea del Fibonacci |
+| tarea4  |  Tarea de Fibonacci GUI |
+| tarea 5 |  Tarea de carrera de JProgressBar |
