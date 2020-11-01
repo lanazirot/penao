@@ -42,6 +42,7 @@ public class MainHilos extends JFrame implements ActionListener {
 		setTitle("Carrera de JProgressBar");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 699, 399);
+		setLocationRelativeTo(null);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -100,7 +101,7 @@ public class MainHilos extends JFrame implements ActionListener {
 				public void run() {
 					compOne.start();
 					compTwo.start();
-					while(isAlive() && RunningJProgressThread.areAllRunning()) {
+					while(RunningJProgressThread.areAllRunning()) {
 						btnCorrer.setEnabled(false);
 						if(compOne.winner()) {
 							JOptionPane.showMessageDialog(MainHilos.this, "La "+compOne.getNombre() + " le gano a la "+
@@ -121,10 +122,15 @@ public class MainHilos extends JFrame implements ActionListener {
 			running.start();
 
 		}else if(e.getSource() == btnMatarHilos) {
+			
+			if(compOne!=null && compTwo!=null) {
+			
 				RunningJProgressThread.setAllRunning(false);
 				compOne.kill();
 				compTwo.kill();
 				btnCorrer.setEnabled(true);
+				
+			}
 
 		}
 	}
