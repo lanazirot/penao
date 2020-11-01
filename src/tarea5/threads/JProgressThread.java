@@ -1,31 +1,38 @@
 package tarea5.threads;
-
 import java.util.Random;
-
-import javax.swing.JOptionPane;
 import javax.swing.JProgressBar;
-
-public class ComponentThread extends Thread{
-	
+public class JProgressThread extends JProgressBar implements Runnable , IProgressRunableMethods, Killable{
+	private static final long serialVersionUID = 1L;
 	private JProgressBar component;
-	
 	private Random rand;
-	
 	private volatile boolean estaCompletado = false;
-	
 	private Random getRand() {
 		return rand;
 	}
 	
-	public ComponentThread(JProgressBar component, String nombre) {
+	private String nombre;
+	
+	@Override
+	public String getNombre() {
+		return nombre;
+	}
+	
+	public JProgressThread(JProgressBar component, String nombre) {
 		this.component = component;
 		rand = new Random();
 		this.component.setName(nombre);
 		this.component.setMaximum(100);
+		this.nombre = nombre;
+		this.component.setStringPainted(true);
 	}
 	
-	public synchronized boolean isCompleted() {
+	public  boolean isCompleted() {
 		return estaCompletado;
+	}
+	
+	@Override
+	public void kill() {
+		estaCompletado = true;
 	}
 	
 	@Override
@@ -33,18 +40,17 @@ public class ComponentThread extends Thread{
 		int intPorciento = 0;
 		while(!estaCompletado) {
 			if(component.getValue() >= 100) {
-				estaCompletado = true;
+				kill();
 			}
-			component.setValue(intPorciento); 
-			intPorciento += getRand().nextInt(3);
+			component.setValue(intPorciento);
+			intPorciento += getRand().nextInt(2);
 			try {
-				Thread.sleep(35);
+				Thread.sleep(15);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 		}
 		component.setValue(0);
-		JOptionPane.showMessageDialog(component, component.getName() + " esta completado");
 	}
 	
 }
